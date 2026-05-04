@@ -46,17 +46,17 @@ def _get_lid_model(model_path: str = '~/fanchi/proj/opensource/model/lid.176.bin
     return _LID_MODEL
 
 
-def _get_nsfw_model():
+def _get_nsfw_model(model_path: str = '~/fanchi/proj/opensource/model/dolma_fasttext_nsfw_jigsaw_model.bin'):
     global _NSFW_MODEL
     if _NSFW_MODEL is None:
-        _NSFW_MODEL = fasttext.load_model("dolma_fasttext_nsfw_jigsaw_model.bin")
+        _NSFW_MODEL = fasttext.load_model(os.path.expanduser(model_path))
     return _NSFW_MODEL
 
 
-def _get_toxic_model():
+def _get_toxic_model(model_path: str = '~/fanchi/proj/opensource/model/dolma_fasttext_hatespeech_jigsaw_mode.bin'):
     global _TOXIC_MODEL
     if _TOXIC_MODEL is None:
-        _TOXIC_MODEL = fasttext.load_model("dolma_fasttext_hatespeech_jigsaw_model.bin")
+        _TOXIC_MODEL = fasttext.load_model(os.path.expanduser(model_path))
     return _TOXIC_MODEL
 
 
