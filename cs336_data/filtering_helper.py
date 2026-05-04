@@ -288,6 +288,9 @@ def exact_line_deduplication(
                     fout.write(line)
 
 def _normalize_text(text: str) -> str:
+    """
+    MinHash 去重流程中的文本标准化预处理步骤，目的是在计算 Jaccard 相似度之前，消除两段"实质相同"的文本因表面形式差异而被判为不同的情况
+    """
     # NFD normalize first
     text = unicodedata.normalize("NFD", text)
 
