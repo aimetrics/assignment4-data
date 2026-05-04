@@ -39,10 +39,10 @@ _NSFW_MODEL = None
 _TOXIC_MODEL = None
 
 
-def _get_lid_model():
+def _get_lid_model(model_path: str = '~/fanchi/proj/opensource/model/lid.176.bin'):
     global _LID_MODEL
     if _LID_MODEL is None:
-        _LID_MODEL = fasttext.load_model("lid.176.bin")
+        _LID_MODEL = fasttext.load_model(os.path.expanduser(model_path))
     return _LID_MODEL
 
 
