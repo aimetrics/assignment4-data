@@ -178,8 +178,8 @@ def _load_quality_model_if_available():
     global _QUALITY_MODEL
     if _QUALITY_MODEL is not None:
         return _QUALITY_MODEL
-    if os.path.exists("quality_classifier.bin"):
-        _QUALITY_MODEL = fasttext.load_model("quality_classifier.bin")
+    if os.path.exists(os.path.expanduser("~/fanchi/proj/opensource/model/quality_classifier/quality_classifier.bin")):
+        _QUALITY_MODEL = fasttext.load_model(os.path.expanduser("~/fanchi/proj/opensource/model/quality_classifier/quality_classifier.bin"))
     return _QUALITY_MODEL
 
 
